@@ -54,7 +54,9 @@ function clean_popup {
 
 function produce_filename {
     url=$1
-    if [[ $url =~ "popupchinese.com" ]] ; then
+    if [[ $url =~ "sinica" ]] ; then
+        filename=$(echo $(basename $url) | perl -pe 's/(.*?.mp3).*/\1/')
+    elif [[ $url =~ "popupchinese.com" ]] ; then
         filename=$(clean_popup $url)
     else
         #filename=$(echo $url | awk -F'/' '{print $NF}')
@@ -102,12 +104,6 @@ function download {
             fi
             done
         done < bp.conf
-    popup_script=popup_tools/run_all_utilities.sh
-    if [ -f $popup_script ]
-    then
-        bash $popup_script
-    fi
-
 }
 
 main $@
