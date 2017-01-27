@@ -59,8 +59,8 @@ function produce_filename {
     elif [[ $url =~ "popupchinese.com" ]] ; then
         filename=$(clean_popup $url)
     else
-        #filename=$(echo $url | awk -F'/' '{print $NF}')
-        filename=$(echo "$url" | awk -F'/' {'print $NF'} | awk -F'=' {'print $NF'} | awk -F'?' {'print $1'})
+        filename=$(echo $url | awk -F'/' '{print $NF}' | awk -F'?' {'print $1'})
+        # filename=$(echo "$url" | awk -F'/' {'print $NF'} | awk -F'=' {'print $NF'} | awk -F'?' {'print $1'})
     fi
     echo $filename
 }
