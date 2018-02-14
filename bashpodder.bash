@@ -38,30 +38,9 @@ function usage {
     echo "Usage: bashpodder.bash download | test | help"
 }
 
-function clean_popup {
-    url=$1
-    filetype=$(echo $url | sed -e 's/.*\(mp3\|pdf\)$/\1/' )
-    lesson=$(echo $(basename $url) | sed -e 's/\(.*\).\(pdf\|mp3\)%.*/\1/' )
-    # lesson=$(echo $url | cut -d/ -f7)
-    level=$(echo $url | cut -d/ -f6)
-    mediatype=$(echo $url | cut -d/ -f5)
-    # if [ $mediatype = $filetype ] ; then
-    #     echo "popupchinese-${level}-${lesson}.$filetype"
-    # else
-    # fi
-    echo "popupchinese-${level}-${lesson}-${mediatype}.$filetype"
-}
-
 function produce_filename {
     url=$1
-    if [[ $url =~ "sinica" ]] ; then
-        filename=$(echo $(basename $url) | perl -pe 's/(.*?.mp3).*/\1/')
-    elif [[ $url =~ "popupchinese.com" ]] ; then
-        filename=$(clean_popup $url)
-    else
-        filename=$(echo $url | awk -F'/' '{print $NF}' | awk -F'?' {'print $1'})
-        # filename=$(echo "$url" | awk -F'/' {'print $NF'} | awk -F'=' {'print $NF'} | awk -F'?' {'print $1'})
-    fi
+    filename=$(echo $url | awk -F'/' '{print $NF}' | awk -F'?' {'print $1'})
     echo $filename
 }
 

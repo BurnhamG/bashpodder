@@ -5,9 +5,7 @@ Bashpodder
 This is my modified version of the bashpodder podcatcher script. It is available under the GPL.
 
 The original is available at https://github.com/lincgeek/bashpodder .
-This includes enhancements made by Ellen Taylor available at https://github.com/ellencubed/bashpodder .
-
-Filenames from popupchinese.com podcasts are automatically cleaned up before downloading.
+This includes some enhancements made by Ellen Taylor available at https://github.com/ellencubed/bashpodder .
 
 Usage
 ~~~~~
