@@ -2,6 +2,10 @@
 Bashpodder
 ~~~~~~~~~~
 
+.. image:: http://www.repostatus.org/badges/latest/inactive.svg
+   :alt: Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.
+   :target: http://www.repostatus.org/#inactive
+
 This is my modified version of the bashpodder podcatcher script. It is available under the GPL.
 
 The original is available at https://github.com/lincgeek/bashpodder .
